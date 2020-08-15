@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junya.spring.repository.dao.JunyaUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.junya.spring.repository.bean.JunyaUserBean">
+        <id column="user_id" property="userId" />
+        <result column="login_name" property="loginName" />
+        <result column="login_password" property="loginPassword" />
+        <result column="user_name" property="userName" />
+        <result column="user_phone" property="userPhone" />
+        <result column="cre_date" property="creDate" />
+        <result column="cre_user" property="creUser" />
+        <result column="upd_date" property="updDate" />
+        <result column="upd_user" property="updUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, login_name, login_password, user_name, user_phone, cre_date, cre_user, upd_date, upd_user
+    </sql>
+
+</mapper>
