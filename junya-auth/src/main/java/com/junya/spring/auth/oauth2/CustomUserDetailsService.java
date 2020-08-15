@@ -2,9 +2,8 @@ package com.junya.spring.auth.oauth2;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.junya.spring.repository.bean.JunyaUserBean;
-import com.junya.spring.repository.dao.JunyaUserMapper;
 import com.junya.spring.auth.service.IJunyaUserService;
+import com.junya.spring.repository.bean.JunyaUserBean;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
@@ -35,9 +33,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     //登入重试时间
     @Value("${security.loginAfterTime}")
     private Integer loginAfterTime;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private StringRedisTemplate redisTemplate;

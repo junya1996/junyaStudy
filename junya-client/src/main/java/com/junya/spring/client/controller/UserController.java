@@ -40,9 +40,9 @@ public class UserController {
     @PostMapping(value = "/exit")
     public Result<String> revokeToken(String access_token) {
         if (!consumerTokenService.revokeToken(access_token)) {
-           return Result.build().fail("注销失败");
+           return Result.fail("注销失败");
         }
-        return Result.build().OK("注销成功");
+        return Result.success("注销成功");
     }
 
     @GetMapping(value = "get")

@@ -49,6 +49,11 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.3.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+            <version>3.3.2</version>
+        </dependency>
         <!--mybatis-plus 生成-->
         <dependency>
             <groupId>com.baomidou</groupId>

@@ -19,7 +19,7 @@ import java.util.List;
 
 @EnableTransactionManagement(proxyTargetClass = true)
 @Configuration
-@MapperScan("com.gladtrust.saas.repository.dao")
+@MapperScan("com.junya.spring.repository.dao")
 public class MybatisPlusConfig {
 
     /**

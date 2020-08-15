@@ -1,11 +1,15 @@
 package com.junya.spring.auth.config;
 
+import com.junya.spring.auth.oauth2.CustomTokenEnhancer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+import java.util.Arrays;
 
 /**
  * Author Junya
@@ -22,7 +26,9 @@ public class JwtTokenConfig {
 
     @Bean
     public TokenEnhancer jwtTokenEnhancer() {
-        return new JWTokenEnhancer();
+        TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(new CustomTokenEnhancer(), jwtAccessTokenConverter()));
+        return tokenEnhancerChain;
     }
 
     @Bean

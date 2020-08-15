@@ -10,7 +10,6 @@ import lombok.Getter;
  * Description:
  */
 @Getter
-@Data
 public enum SystemErrorType implements ErrorType {
     SYSTEM_ERROR("-1", "系统异常"),
     SYSTEM_BUSY("000001", "系统繁忙,请稍候再试"),
